@@ -1,0 +1,6 @@
+---
+  consul_version: 1.2.2
+  consul_archive: consul_{{ consul_version }}_linux_amd64.zip
+  consul:
+    dir:  /opt/consul
+    url: https://releases.hashicorp.com/consul/{{ consul_version }}/consul_{{ consul_version }}_linux_amd64.zip

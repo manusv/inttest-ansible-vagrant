@@ -1,0 +1,23 @@
+# {{ ansible_managed }}
+[Unit]
+Description=systemd script for consul
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+
+ExecStart=/usr/local/bin/consul
+ExecReload=/bin/kill -HUP $MAINPID
+
+TimeoutStartSec=60
+TimeoutStopSec=30
+
+KillMode=process
+Restart=always
+
+StandardOutput=syslog+console
+
+[Install]
+WantedBy=multi-user.target
